@@ -12,7 +12,11 @@
 
 - `python3 -m doctest lab04.py`  测试所有文本里的测试是不是通过，以lab04为例
 
-  - For all WWPD questions, type **Function** if you believe the answer is <function...>, **Error** if it errors, and **Nothing** if nothing is displayed.
+  - 对于**`WWPD`**问题（What Would Python Display?）
+
+    **Fuction**代表是函数调用，**Error**代表错误，**Nothing**代表无输出
+
+    For all WWPD questions, type **Function** if you believe the answer is <function...>, **Error** if it errors, and **Nothing** if nothing is displayed.
 
   - 对于解锁测试用例 
 
