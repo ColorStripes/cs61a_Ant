@@ -12,7 +12,7 @@
 
 - `python3 -m doctest lab04.py`  测试所有文本里的测试是不是通过，以lab04为例
 
-  - 对于**`WWPD`**问题（What Would Python Display?）
+  - 对于`WWPD`问题（What Would Python Display?）
 
     **Fuction**代表是函数调用，**Error**代表错误，**Nothing**代表无输出
 
@@ -49,7 +49,7 @@
 - 同一类蚂蚁放置成本相同
 - 类似植物大战僵尸
 
-![Ants vs. Somebees](CS61A/splash.png)
+![Ants vs. Somebees](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/splash.png)
 
 
 
@@ -59,19 +59,19 @@
 
 - **01.py** 就是让按照此表填充数字回答问题，而**partB**，则是在*ants/ants.py*中添加**class HarvesterAnt**的食物增长模式
 
-  ![image-20220830220853203](CS61A/image-20220830220853203.png)
+  ![image-20220830220853203](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220830220853203.png)
 
 - 收割者每回合+1食物
 
   投石者向前方扔石头攻击蜜蜂
 
-![image-20220830213138067](CS61A/image-20220830213138067.png)
+![image-20220830213138067](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220830213138067.png)
 
 
 
 #### problem2 (Place)
 
-- ![image-20220830213938717](CS61A/image-20220830213938717.png)
+- ![image-20220830213938717](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220830213938717.png)
 
 - Place 就是一个类它需要记录两个东西，一个是entrance,另一个是exit. 有点类似双向链表。它还可以帮助Ant确定它前面有多少Bees
 
@@ -85,7 +85,7 @@
 
 ​		If the `Place` has an `exit`, then the `exit`'s `entrance` is set to that `Place`.
 
-- *Hint:* Try drawing out two `Place`s next to each other if things get confusing. In the GUI, a place's `entrance` is to its right while the `exit` is to its left.![image-20220830222457012](CS61A/image-20220830222457012.png)
+- *Hint:* Try drawing out two `Place`s next to each other if things get confusing. In the GUI, a place's `entrance` is to its right while the `exit` is to its left.![image-20220830222457012](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220830222457012.png)
 
 #### problem3 (ThrowerAnt)
 
@@ -103,12 +103,12 @@
 
 - solution:
 
-  ![image-20220831001648321](CS61A/image-20220831001648321.png)
+  ![image-20220831001648321](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831001648321.png)
 
   - 值得注意的是这里利用了Place的属性，`self.place`在循环当中不能改变，所以需要创建新的变量
   - .bees成员为空时是【】，python中认为【】为假
   - 利用next_place 向entrance方向递进
-  - python3 文件问题![image-20220831003442781](CS61A/image-20220831003442781.png)
+  - python3 文件问题![image-20220831003442781](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831003442781.png)
 
 ### part2
 
@@ -122,15 +122,15 @@
 
 - 加入新变量 `distance` 判断攻击距离
 
-  ![image-20220831011316167](CS61A/image-20220831011316167.png)
+  ![image-20220831011316167](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831011316167.png)
 
-- ![image-20220831011816025](CS61A/image-20220831011816025.png)
+  ![image-20220831011816025](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831011816025.png)
 
 #### problem5 (FireAnt)
 
-- 首先要知道self指的是![image-20220831134411899](CS61A/image-20220831134411899.png)类
+- 首先要知道self指的是![image-20220831134411899](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831134411899.png)类
 
-- 其次，![image-20220831135153567](CS61A/image-20220831135153567.png)遍历所有list的方法（这里的list指的是Bees)
+- 其次，![image-20220831135153567](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831135153567.png)遍历所有list的方法（这里的list指的是Bees)
 
   ​																		 **！！！重点来了！！！**
 
@@ -156,21 +156,21 @@
 
   - 火蚁回收必须调用`Insect`的`reduce_health`方法，其中判断血量并使用death_callback回收
 
-    ![image-20220831193524469](CS61A/image-20220831193524469.png)
+    ![image-20220831193524469](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831193524469.png)
 
   - 这里还需要注意，父类中没有重写`health_reduce`，父类是从超类中继承而来，而超类方法的作用为：
 
-    ![image-20220831145210177](CS61A/image-20220831145210177.png)
+    ![image-20220831145210177](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831145210177.png)
 
-  - 这里的![image-20220831145452111](CS61A/image-20220831145452111.png)则是Bees元素直接调用`Insect`类的`health_reduce`方法
+  - 这里的![image-20220831145452111](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831145452111.png)则是Bees元素直接调用`Insect`类的`health_reduce`方法
 
-  - 这里的![image-20220831145700757](CS61A/image-20220831145700757.png)是FireAnt调用超类`Insect`类的`health_reduce`方法
+  - 这里的![image-20220831145700757](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831145700757.png)是FireAnt调用超类`Insect`类的`health_reduce`方法
 
   - 而FireAnt中的`health_reduce`方法则是对从Ant类继承的方法进行重定义
 
   - [(48条消息) Python基础：super()用法_硝烟_1994的博客-CSDN博客_python super()](https://blog.csdn.net/qq_44804542/article/details/116173195)
 
-- ![image-20220831140529499](CS61A/image-20220831140529499.png)
+- ![image-20220831140529499](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831140529499.png)
 
 ### part3
 
@@ -178,7 +178,7 @@
 
 - no problem because it is so easy,just to type it samply as FireAnt and no `def` 
 
-- ![image-20220831151413546](CS61A/image-20220831151413546.png)
+- ![image-20220831151413546](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831151413546.png)
 
 #### problem7（HungryAnt）
 
@@ -192,7 +192,7 @@
 
 - 将Bee的生命值瞬间降为0 ： die_bee.reduce_health(die_bee.health)    **减少当前全部血量**
 
-- ![image-20220831162001334](CS61A/image-20220831162001334.png)
+- ![image-20220831162001334](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831162001334.png)
 
 #### problem8（BodyguardAnt）
 
@@ -221,17 +221,17 @@
 
 - 只需要传入BodyguardAnt的血量，初始化构造函数完成
 
-  ![image-20220831190420434](CS61A/image-20220831190420434.png)
+  ![image-20220831190420434](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831190420434.png)
 
-- ![image-20220831170958050](CS61A/image-20220831170958050.png)
+- ![image-20220831170958050](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831170958050.png)
 
 #### problem9（TankAnt）
 
 - 坦克蚁除了血量和food需要重写外，`action`相对于警卫蚁要增加对此处Bees的攻击行为
 
-  ![image-20220831193927563](CS61A/image-20220831193927563.png)
+  ![image-20220831193927563](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831193927563.png)
 
-- ![image-20220831190618608](CS61A/image-20220831190618608.png)
+- ![image-20220831190618608](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831190618608.png)
 
 ### part4
 
@@ -246,13 +246,13 @@
   - First, add the insect to the place regardless of whether it is waterproof.
   - Then, if the insect is not waterproof, reduce the insect's health to 0.
 
-  - ![image-20220831211054362](CS61A/image-20220831211054362.png)
+  - ![image-20220831211054362](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831211054362.png)
 
 #### problem11(ScubaThrower)
 
 - 潜水蚁直接继承投石者的属性，只不过将`is_waterproof`属性改为True，同时潜水蚁和长投蚁一样，初始血量为1，和`Ant`的初始化保持一致，所以不用重定义`__init__`方法
 
-- ![image-20220831211433241](CS61A/image-20220831211433241.png)
+- ![image-20220831211433241](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831211433241.png)
 
 #### problem12（QueenAnt）
 
@@ -289,7 +289,7 @@
 
   - 确保场上只有一只蚂蚁，则该方法没有任何作用，不进行任何操作，只是为了重定义继承的方法
 
-- ![image-20220831215304606](CS61A/image-20220831215304606.png)
+- ![image-20220831215304606](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220831215304606.png)
 
 #### Extra Credit （NewInherit）
 
@@ -337,7 +337,7 @@
 
       If a bee is hit by syrup while it is already slowed, it is slowed for an additional 3 turns.
 
-- ![image-20220901013507026](CS61A/image-20220901013507026.png)
+- ![image-20220901013507026](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901013507026.png)
 
 ### Optional Problems
 
@@ -429,7 +429,7 @@
 
     - 返回计算的最终伤害
 
-- ![image-20220901201408148](CS61A/image-20220901201408148.png)
+- ![image-20220901201408148](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901201408148.png)
 
 ### Project submission
 
@@ -437,15 +437,15 @@
 
   you will see this
 
-  ![image-20220901223337622](CS61A/image-20220901223337622.png)
+  ![image-20220901223337622](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901223337622.png)
 
 - Congratulations！ All test had passed！And you got all score！
 
-  ![image-20220901223653756](CS61A/image-20220901223653756.png)
+  ![image-20220901223653756](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901223653756.png)
 
 - 运行界面演示
 
-  ![image-20220901233334135](CS61A/image-20220901233334135.png)
+  ![image-20220901233334135](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901233334135.png)
 
   
 
@@ -468,29 +468,29 @@
 
 #### All Ant
 
-![image-20220901225944109](CS61A/image-20220901225944109.png)
+![image-20220901225944109](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901225944109.png)
 
-![image-20220901230010100](CS61A/image-20220901230010100.png)
+![image-20220901230010100](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901230010100.png)
 
 ![image-20220901230031313](CS61A/image-20220901230031313.png)
 
-![image-20220901230101996](CS61A/image-20220901230101996.png)
+![](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901230101996.png)
 
-![image-20220901230122060](CS61A/image-20220901230122060.png)
+![image-20220902012801932](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220902012801932.png)
 
-![image-20220901230143470](CS61A/image-20220901230143470.png)
+![image-20220901230143470](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901230143470.png)
 
-![image-20220901230204749](CS61A/image-20220901230204749.png)
+![image-20220901230204749](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901230204749.png)
 
-![image-20220901230241684](CS61A/image-20220901230241684.png)
+![image-20220901230241684](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901230241684.png)
 
 ![image-20220901230300533](CS61A/image-20220901230300533.png)
 
-![image-20220901230317330](CS61A/image-20220901230317330.png)
+![image-20220901230317330](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901230317330.png)
 
-![image-20220901230329192](CS61A/image-20220901230329192.png)
+![image-20220901230329192](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901230329192.png)
 
-![image-20220901230345776](CS61A/image-20220901230345776.png)
+![image-20220901230345776](https://raw.githubusercontent.com/ColorStripes/Typora_Picture/master/picture/image-20220901230345776.png)
 
 ## Github URL
 
